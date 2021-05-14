@@ -22,19 +22,16 @@
                 <value>QQ飞车</value>
             </set>
         </property>
-
         <property name="hobbys">
             <list>
                 <value>song</value>
             </list>
         </property>
-
         <property name="identity">
             <map>
                 <entry key="学号" value="130412054"></entry>
             </map>
         </property>
-
         <property name="properties">
             <props>
                 <prop key="url">mysql://3306</prop>
@@ -42,6 +39,9 @@
             </props>
         </property>
     </bean>
+
+    <aop:aspectj-autoproxy/>
+    <bean id="aopAspect" class="com.wge.study.aop.MyAspect"/>
 
     <!-- 导入资源文件
     读取db.properties文件中的数据 -->
@@ -61,7 +61,7 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <bean id="myAspect" class="com.wge.study.aspect.MyAspect"></bean>
+    <bean id="myAspect" class="com.wge.study.aspect.XmlAspect"></bean>
 
     <bean id="userService" class="com.wge.study.service.UserService"></bean>
 
